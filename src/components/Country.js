@@ -1,12 +1,14 @@
 const Country = (props) => {
     
   return (
-    <div>
-        <img src={props.img} alt="" />
-        <h2>{props.name}</h2>
-        <span>Population: {props.population}</span>
-        <span>Region: {props.region}</span>
-        <span>Capital: {props.capital}</span>
+    <div className="country-wrapper">
+        <img src={props.img} className="country-flag" />
+        <div className="country-detail">
+            <h2 className="country-name">{props.name}</h2>
+            <p> <span className="data-title">Population:</span> {props.population}</p>
+            <p> <span className="data-title">Region:</span> {props.region}</p>
+            <p> <span className="data-title">Capital:</span> {props.capital}</p>
+        </div>
     </div>
   )
 }
