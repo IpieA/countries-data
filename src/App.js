@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { Route, Routes } from 'react-router-dom'
 import Header from "./components/Header";
 import Search from "./components/Search";
 import Country from "./components/Country";
+import SingleCountry from "./components/SingleCountry";
 import data from './data.json';
 
 
@@ -38,14 +40,23 @@ function App() {
     )
   })
   return (
-    <div className="container">
-      <Header/>
-      <Search selectedContinent={selectedContinent} handleContinentChange={handleContinentChange} handleSearch={handleSearch}/>
-      <section className="country-list">
-        {countries}
-      </section>
-    </div>
-
+      <div className="container">
+        <Header/>
+          <Routes>
+            <Route 
+              path ="/" 
+              element = {
+                <>
+                  <Search selectedContinent={selectedContinent} handleContinentChange={handleContinentChange} handleSearch={handleSearch}/>
+                  <section className="country-list">
+                    {countries}
+                  </section>
+                </>
+              } 
+            />
+            <Route path="/country/:name" element={<SingleCountry data={data}/>} />
+          </Routes>
+      </div>
   );
 }
 
