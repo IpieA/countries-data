@@ -10,6 +10,7 @@ import data from './data.json';
 function App() {
   const [selectedContinent, setSelectedContinent] = useState('')
   const [searchQuery, setSearchQuery] = useState('');
+  const [theme, setTheme] = useState('light');
 
   const handleContinentChange = (event) => {
     setSelectedContinent(event.target.value);
@@ -23,6 +24,11 @@ function App() {
     (selectedContinent === '' || country.region === selectedContinent) &&
     country.name.toLowerCase().startsWith(searchQuery.toLowerCase())
   );
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  }
+  
 
   // const filteredCountries = data.filter(country => selectedContinent === '' || country.region === selectedContinent);
   // const filteredCountries = selectedContinent === '' ? data : data.filter(country => country.region === selectedContinent || selectedContinent === 'All');
@@ -39,9 +45,10 @@ function App() {
       />
     )
   })
+
   return (
-      <div className="container">
-        <Header/>
+      <div className={`app ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
+        <Header toggleTheme={toggleTheme} theme={theme}/>
           <Routes>
             <Route 
               path ="/" 

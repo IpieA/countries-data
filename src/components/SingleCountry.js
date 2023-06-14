@@ -31,7 +31,9 @@ const SingleCountry = (props) => {
     <div className='single-country-wrapper'>
       <Button to="/" text="Back" faClassName="fa-left-long"/>
       <div className='single-country-data'>
-        <img src={flags.svg} className="single-country-flag" />
+        <div className="single-country-flag-wrapper">
+          <img src={flags.svg} className="single-country-flag" />
+        </div>
         <div>
           <h2 className="single-country-name">{name}</h2>
           <div className='single-country-details'>
@@ -48,14 +50,20 @@ const SingleCountry = (props) => {
                 <p> <span className="data-title">Languages:</span> {languages[0].name}</p>
             </div>
           </div>
-          {borderCountryNames.length > 0 && (
-          <div className='border-countries'>
-              <p>
-                <span className="data-title">Border Countries:</span><br></br>
-                {borderCountryNames.join(', ')}
-              </p>
-          </div>
-          )}
+          {borderCountryNames.length > 0 ? (
+              <div className="border-countries">
+                <span className="border-countries-data-title">Border Countries:</span>{' '}
+                {borderCountryNames.map((borderCountry, index) => (
+                  <span key={index} className="border-country">
+                    {borderCountry}
+                  </span>
+                ))}
+              </div>
+            ) : (
+              <div className="border-countries">
+                <span className="border-countries-data-title">Border Countries: None</span>
+              </div>
+            )}
         </div>
       </div>
     </div>
