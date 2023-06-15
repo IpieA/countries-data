@@ -19,6 +19,10 @@ body {
   .country-detail{
     background: hsl(0, 0%, 100%);
   }
+  .scroll-to-top-button{
+    background: hsl(207, 26%, 17%);
+    color: hsl(0, 0%, 100%);
+  }
 }
 
 /* dark-theme.css */
@@ -189,6 +193,25 @@ input[type="search"]::placeholder {
   width: 100%;
   font-weight: 600;
 }
+.scroll-to-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #333;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+.scroll-to-top-button.visible {
+  opacity: 1;
+}
+
+
 /* media queries */
 
 @media screen and (min-width:768px) {
@@ -216,6 +239,7 @@ input[type="search"]::placeholder {
     gap:2rem;
   }
 }
+
 
 @media screen and (min-width:1024px){
   .single-country-details{

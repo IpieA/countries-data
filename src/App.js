@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Search from "./components/Search";
 import Country from "./components/Country";
 import SingleCountry from "./components/SingleCountry";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 import data from './data.json';
 
 
@@ -63,6 +64,7 @@ function App() {
             />
             <Route path="/country/:name" element={<SingleCountry data={data}/>} />
           </Routes>
+          <ScrollToTopButton/>
       </div>
   );
 }
