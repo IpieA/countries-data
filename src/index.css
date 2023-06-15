@@ -114,6 +114,10 @@ input[type="search"]::placeholder {
   height: 24.3rem;
   text-decoration: none;
   color: inherit;
+  transition: 0.6s;
+}
+.country-wrapper:hover{
+  transform: scale(1.1);
 }
 .country-flag{
   width: 100%;
@@ -163,10 +167,7 @@ input[type="search"]::placeholder {
   align-items: flex-start;
 }
 .single-country-flag{
-  /* width: 18.75rem;
-  height: 12.5rem;
-  object-fit: cover; */
-  max-width: 35rem;
+  max-width: 18rem;
   height: auto;
   object-fit: contain;
 }
@@ -238,6 +239,9 @@ input[type="search"]::placeholder {
     display: flex;
     gap:2rem;
   }
+  .single-country-flag{
+    max-width: 25rem;
+  }
 }
 
 
@@ -245,5 +249,8 @@ input[type="search"]::placeholder {
   .single-country-details{
     display: flex;
     gap: 5rem;
+  }
+  .single-country-flag{
+    max-width: 35rem;
   }
 }

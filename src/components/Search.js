@@ -11,7 +11,7 @@ const Search = ({ selectedContinent, handleContinentChange, handleSearch }) => {
   return (
     <div className="searchfilter-wrapper">
         <form className="search-input svg-background">
-            <input type="search" placeholder="Search for a country" className="search-input-field" value={searchQuery} onChange={handleInputChange}/>
+            <input type="search" placeholder="Search for a country..." className="search-input-field" value={searchQuery} onChange={handleInputChange}/>
         </form>
         <select name="" id="" className="continent-filter" value={selectedContinent} onChange={handleContinentChange}>
             <option value="" disabled hidden>Filter by Region</option>
